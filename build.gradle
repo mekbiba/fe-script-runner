@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+jar {
+    baseName = 'fe-script-runner'
+    version = '0.0.1-SNAPSHOT'
+    manifest {
+        attributes 'Main-Class': 'org.jsi.elmis.Main'
+    }
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+
