@@ -13,6 +13,7 @@ public class ScriptRunner implements Runnable {
     private static String OS = System.getProperty("os.name");
     private ProgressIndicator progressIndicator;
     private String tempScriptsDirectoryPath;
+    String userDir = System.getProperty("user.dir");
     private String[] fileNames = new String[]{
             "01_insert_prod_conv_rates.sql",
             "02_backup.sql",
@@ -30,9 +31,11 @@ public class ScriptRunner implements Runnable {
         System.out.println(OS);
         try {
             if(OS.toLowerCase().contains("windows")){
+                tempScriptsDirectoryPath = userDir + "\\scripts";
                 this.runCommand("cmd", "/c", "windows.bat");
             }else{
-                this.runCommand("/bin/bash", "-c", "linux.sh");
+                tempScriptsDirectoryPath = userDir + "/scripts";
+                this.runCommand("bash", "-c", "./linux.sh");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,19 +44,32 @@ public class ScriptRunner implements Runnable {
 
     private ProcessBuilder getProcessBuilder(String... commandString) throws IOException{
         ProcessBuilder builder = new ProcessBuilder().command(commandString);
-        String userDir = System.getProperty("user.dir");
-        tempScriptsDirectoryPath = userDir + "\\scripts";
+        
+        
         File scriptsDir = new File(tempScriptsDirectoryPath);
         if(!scriptsDir.exists()) {
             scriptsDir.mkdir();
         }
         InputStream inputStream = null;
-        for(String fileName:fileNames){
+        File destFile = null;
+        for(String fileName : fileNames){
             inputStream = getClass().getResourceAsStream("/scripts/" + fileName);
-            copyFile(inputStream, new File(scriptsDir + "\\" + fileName));
+            System.out.println(getDestFileName( fileName ));
+            destFile = new File(getDestFileName( fileName ));
+            destFile.setExecutable(true);
+            copyFile(inputStream, destFile);
         }
         builder.directory(scriptsDir);
         return builder;
+    }
+
+
+    private String getDestFileName(String fileName){
+        if(OS.toLowerCase().contains("windows")){
+            return tempScriptsDirectoryPath + "\\" + fileName;
+        }else{
+            return tempScriptsDirectoryPath + "/" + fileName;
+        }
     }
 
     void runCommand(String... commandString) throws IOException {
