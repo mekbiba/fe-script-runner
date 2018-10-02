@@ -58,7 +58,7 @@ public class ScriptRunner implements Runnable {
             inputStream = getClass().getResourceAsStream("/scripts/" + fileName);
             System.out.println(getDestFileName( fileName ));
             destFile = new File(getDestFileName( fileName ));
-            destFile.setExecutable(true);
+            
             copyFile(inputStream, destFile);
         }
         builder.directory(scriptsDir);
@@ -107,6 +107,7 @@ public class ScriptRunner implements Runnable {
                 output.write(buf, 0, bytesRead);
             }
         } finally {
+            dest.setExecutable(true);
             input.close();
             output.close();
         }
