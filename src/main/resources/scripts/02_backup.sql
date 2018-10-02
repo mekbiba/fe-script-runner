@@ -16,7 +16,7 @@ CREATE TABLE public.transaction_products_bak
         REFERENCES public.transactions (id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-)
+);
 
 ------------------------------------------------------------------------
 

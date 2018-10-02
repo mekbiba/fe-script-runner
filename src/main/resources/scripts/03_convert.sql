@@ -37,7 +37,7 @@ FROM program_products pp
   INNER JOIN products p ON pp.productid = p.id
   INNER JOIN product_conversion_temp pct ON pct.product_code = p.code
 WHERE tp.converted = FALSE
-AND   tp.program_product_id = pp.id
+AND   tp.program_product_id = pp.id;
 
 ---------------------------------------------------------------------------------
 
@@ -63,7 +63,7 @@ FROM node_products np
   INNER JOIN products p ON pp.productid = p.id
   INNER JOIN product_conversion_temp pct ON pct.product_code = p.code
 WHERE n.converted = FALSE
-AND   np.id = n.node_program_product_id
+AND   np.id = n.node_program_product_id;
 
 
 ---------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ FROM node_products np
   INNER JOIN products p ON pp.productid = p.id
   INNER JOIN product_conversion_temp pct ON pct.product_code = p.code
 WHERE pc.converted = FALSE
-AND  np.id = pc.node_product_id
+AND  np.id = pc.node_product_id;
 
 
 ---------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ FROM program_products pp
   INNER JOIN products p ON pp.productid = p.id
   INNER JOIN product_conversion_temp pct ON pct.product_code = p.code
 WHERE np.program_product_id = pp.id
-AND   np.converted = FALSE
+AND   np.converted = FALSE;
 
 ---------------------------------------------------------------------------------
 
@@ -112,7 +112,7 @@ UPDATE requisition_line_items rli
 FROM products p
   INNER JOIN product_conversion_temp pct ON p.code = pct.product_code
 WHERE rli.product_id = p.id
-AND   rli.converted = FALSE
+AND   rli.converted = FALSE;
 
 
 ---------------------------------------------------------------------------------
