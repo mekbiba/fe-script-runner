@@ -1,8 +1,6 @@
 package org.jsi.elmis;
 
-import javafx.application.Platform;
 import javafx.scene.control.ProgressIndicator;
-import javafx.scene.control.TextArea;
 
 import javax.swing.*;
 import java.io.*;
@@ -26,6 +24,10 @@ public class ScriptRunner implements Runnable {
         this.progressIndicator = progressIndicator;
     }
 
+    public static String getOS(){
+        return OS;
+    }
+
     @Override
     public void run() {
         System.out.println(OS);
@@ -44,8 +46,8 @@ public class ScriptRunner implements Runnable {
 
     private ProcessBuilder getProcessBuilder(String... commandString) throws IOException{
         ProcessBuilder builder = new ProcessBuilder().command(commandString);
-        
-        
+
+
         File scriptsDir = new File(tempScriptsDirectoryPath);
         if(!scriptsDir.exists()) {
             scriptsDir.mkdir();
