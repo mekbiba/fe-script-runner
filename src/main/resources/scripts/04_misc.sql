@@ -1,5 +1,9 @@
 UPDATE program_products SET id = id + 20000;
 
+
+DROP INDEX public.uc_products_lower_code;
+
+
 DO $$
     BEGIN
         BEGIN
