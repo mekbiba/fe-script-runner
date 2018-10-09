@@ -2236,7 +2236,6 @@ insert into product_conversion_temp select 'MS0036',1 where exists (select id fr
 insert into product_conversion_temp select 'MS0037',1 where exists (select id from products where code = 'MS0037');
 insert into product_conversion_temp select 'MS0038',1 where exists (select id from products where code = 'MS0038');
 insert into product_conversion_temp select 'MS0039',1 where exists (select id from products where code = 'MS0039');
-insert into product_conversion_temp select 'MS0040',1 where exists (select id from products where code = 'MS0040');
 insert into product_conversion_temp select 'MS0041',1 where exists (select id from products where code = 'MS0041');
 insert into product_conversion_temp select 'MS0042',1 where exists (select id from products where code = 'MS0042');
 insert into product_conversion_temp select 'MS0043',1 where exists (select id from products where code = 'MS0043');
@@ -2274,7 +2273,6 @@ insert into product_conversion_temp select 'MS0074',1 where exists (select id fr
 insert into product_conversion_temp select 'MS0075',1 where exists (select id from products where code = 'MS0075');
 insert into product_conversion_temp select 'MS0076',1 where exists (select id from products where code = 'MS0076');
 insert into product_conversion_temp select 'MS0077',0.166666666666667 where exists (select id from products where code = 'MS0077');
-insert into product_conversion_temp select 'MS0078',0.0833333333333333 where exists (select id from products where code = 'MS0078');
 insert into product_conversion_temp select 'MS0079',1 where exists (select id from products where code = 'MS0079');
 insert into product_conversion_temp select 'MS0080',1 where exists (select id from products where code = 'MS0080');
 insert into product_conversion_temp select 'MS0081',1 where exists (select id from products where code = 'MS0081');
@@ -2292,7 +2290,7 @@ insert into product_conversion_temp select 'MS0092',0.0833333333333333 where exi
 insert into product_conversion_temp select 'MS0093',1 where exists (select id from products where code = 'MS0093');
 insert into product_conversion_temp select 'MS0094',1 where exists (select id from products where code = 'MS0094');
 insert into product_conversion_temp select 'MS0095',0.0454545454545455 where exists (select id from products where code = 'MS0095');
-insert into product_conversion_temp select 'MS0096',0.0833333333333333 where exists (select id from products where code = 'MS0096');
+insert into product_conversion_temp select 'MS0096',1 where exists (select id from products where code = 'MS0096');
 insert into product_conversion_temp select 'MS0097',1 where exists (select id from products where code = 'MS0097');
 insert into product_conversion_temp select 'MS0098',1 where exists (select id from products where code = 'MS0098');
 insert into product_conversion_temp select 'MS0099',1 where exists (select id from products where code = 'MS0099');
@@ -3120,7 +3118,6 @@ insert into product_conversion_temp select 'MS698',1 where exists (select id fro
 insert into product_conversion_temp select 'LAB0453',0.02 where exists (select id from products where code = 'LAB0453');
 insert into product_conversion_temp select 'LAB0146',1 where exists (select id from products where code = 'LAB0146');
 insert into product_conversion_temp select 'LAB0806',0.02 where exists (select id from products where code = 'LAB0806');
-insert into product_conversion_temp select 'LAB0254',0.01 where exists (select id from products where code = 'LAB0254');
 insert into product_conversion_temp select 'NP0001',1 where exists (select id from products where code = 'NP0001');
 insert into product_conversion_temp select 'NP0002',1 where exists (select id from products where code = 'NP0002');
 insert into product_conversion_temp select 'NP0003',1 where exists (select id from products where code = 'NP0003');
@@ -3744,7 +3741,6 @@ insert into product_conversion_temp select 'NCMS0035',1 where exists (select id 
 insert into product_conversion_temp select 'NCMS0037',1 where exists (select id from products where code = 'NCMS0037');
 insert into product_conversion_temp select 'NCMS0038',1 where exists (select id from products where code = 'NCMS0038');
 insert into product_conversion_temp select 'NCMS0039',1 where exists (select id from products where code = 'NCMS0039');
-insert into product_conversion_temp select 'NCMS0040',1 where exists (select id from products where code = 'NCMS0040');
 insert into product_conversion_temp select 'NCMS0041',1 where exists (select id from products where code = 'NCMS0041');
 insert into product_conversion_temp select 'NCMS0042',1 where exists (select id from products where code = 'NCMS0042');
 insert into product_conversion_temp select 'NCMS0043',1 where exists (select id from products where code = 'NCMS0043');
@@ -4117,7 +4113,6 @@ insert into product_conversion_temp select 'MAL0011',10 where exists (select id 
 insert into product_conversion_temp select 'MAL0012',2 where exists (select id from products where code = 'MAL0012');
 insert into product_conversion_temp select 'MAL0013',1 where exists (select id from products where code = 'MAL0013');
 insert into product_conversion_temp select 'MAL0014',1 where exists (select id from products where code = 'MAL0014');
-insert into product_conversion_temp select 'MAL0015',1 where exists (select id from products where code = 'MAL0015');
 insert into product_conversion_temp select 'MAL0016',1 where exists (select id from products where code = 'MAL0016');
 insert into product_conversion_temp select 'MAL0017',1 where exists (select id from products where code = 'MAL0017');
 insert into product_conversion_temp select 'MAL0018',1 where exists (select id from products where code = 'MAL0018');
@@ -4390,7 +4385,6 @@ insert into product_conversion_temp select 'LAB1189',1 where exists (select id f
 insert into product_conversion_temp select 'LAB1190',1 where exists (select id from products where code = 'LAB1190');
 insert into product_conversion_temp select 'LAB1191',1 where exists (select id from products where code = 'LAB1191');
 insert into product_conversion_temp select 'LAB1192',1 where exists (select id from products where code = 'LAB1192');
-insert into product_conversion_temp select 'LAB0453',0.02 where exists (select id from products where code = 'LAB0453');
 insert into product_conversion_temp select 'LAB0283',1 where exists (select id from products where code = 'LAB0283');
 insert into product_conversion_temp select 'LAB1056',1 where exists (select id from products where code = 'LAB1056');
 insert into product_conversion_temp select 'LAB0079',1 where exists (select id from products where code = 'LAB0079');
@@ -5809,7 +5803,6 @@ insert into product_conversion_temp select 'LAB0530',0.04 where exists (select i
 insert into product_conversion_temp select 'LAB1122',1 where exists (select id from products where code = 'LAB1122');
 insert into product_conversion_temp select 'LAB0254',0.01 where exists (select id from products where code = 'LAB0254');
 insert into product_conversion_temp select 'LAB1310',1 where exists (select id from products where code = 'LAB1310');
-insert into product_conversion_temp select 'LAB0806',0.02 where exists (select id from products where code = 'LAB0806');
 insert into product_conversion_temp select 'LAB0193',1 where exists (select id from products where code = 'LAB0193');
 insert into product_conversion_temp select 'LAB0258',0.004 where exists (select id from products where code = 'LAB0258');
 insert into product_conversion_temp select 'LAB0433',1 where exists (select id from products where code = 'LAB0433');

@@ -16,6 +16,7 @@ public class ScriptRunner implements Runnable {
             "01_insert_prod_conv_rates.sql",
             "02_backup.sql",
             "03_convert.sql",
+            "04_misc.sql",
             "linux.sh",
             "windows.bat"
     };
