@@ -17,6 +17,7 @@ public class ScriptRunner implements Runnable {
             "02_backup.sql",
             "03_convert.sql",
             "04_misc.sql",
+            "05_sync.sql",
             "linux.sh",
             "windows.bat"
     };
@@ -59,7 +60,7 @@ public class ScriptRunner implements Runnable {
             inputStream = getClass().getResourceAsStream("/scripts/" + fileName);
             System.out.println(getDestFileName( fileName ));
             destFile = new File(getDestFileName( fileName ));
-            
+
             copyFile(inputStream, destFile);
         }
         builder.directory(scriptsDir);
