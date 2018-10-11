@@ -4,15 +4,7 @@ UPDATE program_products SET id = id + 20000;
 DROP INDEX public.uc_products_lower_code;
 
 
-DO $$
-    BEGIN
-        BEGIN
-           ALTER TABLE transaction_products ADD COLUMN remarks TEXT;
-        EXCEPTION
-            WHEN duplicate_column THEN RAISE NOTICE 'column remarks already exists in transaction_products.';
-        END;
-    END;
-$$
+ALTER TABLE transaction_products ADD COLUMN remarks TEXT;
 
 
 
