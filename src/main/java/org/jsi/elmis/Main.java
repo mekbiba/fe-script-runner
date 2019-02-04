@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/Main.fxml"));
 
-        primaryStage.setTitle("Facility Edition Product Standardization");
+        primaryStage.setTitle("eLMIS FE | Offline Synchronization tool");
         primaryStage.setScene(new Scene(root, 400, 300));
         primaryStage.setOnCloseRequest(windowEvent -> {
             System.exit(0);
