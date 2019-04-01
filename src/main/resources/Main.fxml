@@ -17,14 +17,14 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
          <children>
-            <Label prefHeight="27.0" prefWidth="270.0" text="Sync DB Offline">
+            <Label prefHeight="27.0" prefWidth="270.0" text="eLMIS F.Ed. Update">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <CheckBox fx:id="chkRunAsRoot" mnemonicParsing="false" text="run as super user" />
             <PasswordField fx:id="txtRootPassword" />
-            <Button fx:id="btnRunScript" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0" text="Sync" />
+            <Button fx:id="btnRunScript" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0" text="Update" />
             <AnchorPane fx:id="container" VBox.vgrow="ALWAYS">
                <children>
                   <ProgressIndicator fx:id="progressIndicator" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

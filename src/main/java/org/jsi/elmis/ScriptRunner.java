@@ -11,14 +11,10 @@ public class ScriptRunner implements Runnable {
     private static String OS = System.getProperty("os.name");
     private ProgressIndicator progressIndicator;
     private String tempScriptsDirectoryPath;
+    private String password = "p@ssw0rd";
     String userDir = System.getProperty("user.dir");
     private String[] fileNames = new String[]{
-            "01_insert_prod_conv_rates.sql",
-            "02_backup.sql",
-            "03_convert.sql",
-            "04_misc.sql",
-            "05_sync.sql",
-            "linux.sh",
+            "UpdateX.run",
             "windows.bat"
     };
 
@@ -39,7 +35,7 @@ public class ScriptRunner implements Runnable {
                 this.runCommand("cmd", "/c", "windows.bat");
             }else{
                 tempScriptsDirectoryPath = userDir + "/scripts";
-                this.runCommand("bash", "-c", "./linux.sh");
+                this.runCommand("bash", "-c", "echo '"+password+"'| sudo -S  ./UpdateX.run");
             }
         } catch (IOException e) {
             e.printStackTrace();
