@@ -45,7 +45,6 @@ public class ScriptRunner implements Runnable {
     private ProcessBuilder getProcessBuilder(String... commandString) throws IOException{
         ProcessBuilder builder = new ProcessBuilder().command(commandString);
 
-
         File scriptsDir = new File(tempScriptsDirectoryPath);
         if(!scriptsDir.exists()) {
             scriptsDir.mkdir();
@@ -73,24 +72,34 @@ public class ScriptRunner implements Runnable {
     }
 
     void runCommand(String... commandString) throws IOException {
-        InputStream is = getProcessBuilder(commandString).start().getInputStream();
-        BufferedReader br = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-        String line;
-        while((line = br.readLine()) != null){
-            System.out.println(line);
-            if(line.equalsIgnoreCase("end")) {
-                this.progressIndicator.setVisible(false);
-                JOptionPane.showMessageDialog(null, "Script completed successfully!");
-                File tempScriptsDirectory = new File(tempScriptsDirectoryPath);
-                if (tempScriptsDirectory.exists()) {
-                    for (File file : tempScriptsDirectory.listFiles()) {
-                        file.delete();
-                    }
-                    tempScriptsDirectory.delete();
+    	ProcessBuilder builder = getProcessBuilder(commandString);
+    	Process pr = builder.start();
+    	
+    	try{
+    		pr.waitFor();
+    	}catch(Exception ex){
+    		this.progressIndicator.setVisible(false);
+    		JOptionPane.showMessageDialog(null, "Sorry unable to execute the script! \n\n" + ex.getMessage(), "", JOptionPane.ERROR_MESSAGE);
+    	}
+    	
+    	System.out.println("Process exit code " + pr.exitValue() );
+    	
+    	if(pr.exitValue() == 0){
+    		this.progressIndicator.setVisible(false);
+    		JOptionPane.showMessageDialog(null, "Script completed successfully!");
+    		File tempScriptsDirectory = new File(tempScriptsDirectoryPath);
+            if (tempScriptsDirectory.exists()) {
+                for (File file : tempScriptsDirectory.listFiles()) {
+                    file.delete();
                 }
-                System.exit(0);
+                tempScriptsDirectory.delete();
             }
-        }
+            System.exit(0);
+    	}else{
+    		this.progressIndicator.setVisible(false);
+    		JOptionPane.showMessageDialog(null, "Sorry an unexpected error has occurred!", "", JOptionPane.ERROR_MESSAGE);
+    		System.exit(0);
+    	}
     }
 
 
